@@ -25,9 +25,12 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-modal": "^3.8.1",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.23.1",
+    "uuid": "^3.3.2",
     "webpack": "^3.12.0"
   },
   "devDependencies": {

@@ -2,10 +2,10 @@ import React from 'react'
 
 
 
-const EditExpensePage = () => {
+const EditExpensePage = (props) => {
     return (
         <div>
-            Edit Page
+            Edit Page { props.match.params.id }
         </div>
     )
 }

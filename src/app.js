@@ -34,6 +34,12 @@ const HelpPage = () => {
     )
 }
 
+const NotFoundPage = () => {
+    return (
+        <div>404!</div>
+    )
+}
+
 const routes = (
     <BrowserRouter>
         <div>
@@ -42,6 +48,7 @@ const routes = (
                 <Route path="/create" component={AddExpensePage} />
                 <Route path="/help" component={HelpPage} />
                 <Route path="/edit" component={EditExpensePage} />
+                <Route component={NotFoundPage} />
             </Switch>
         </div>
     </BrowserRouter>

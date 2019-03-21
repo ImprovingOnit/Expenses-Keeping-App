@@ -10,8 +10,12 @@ import { addExpense } from './actions/expenses';
 
 const store = storeExport()
 
-store.dispatch(addExpense({ description: 'Test1', amount: 100, createdAt: 1000 }))
+store.dispatch(addExpense({ description: 'Test1', amount: 100, createdAt: 9000 }))
 store.dispatch(addExpense({ description: 'Test2', amount: 200, createdAt: 2000 }))
+store.dispatch(addExpense({ description: 'Test2', amount: 50, createdAt: 1000 }))
+store.dispatch(addExpense({ description: 'Test2', amount: 150, createdAt: 3000 }))
+
+
 
 const App = () => {
     return (

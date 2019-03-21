@@ -6,7 +6,7 @@ import { removeExpense } from '../actions/expenses';
 const ExpenseListItem = ({ id, description, amount, createdAt, removeExpenseFromRedux }) => {
     return (
         <div>
-            <p>{description}...{amount}...{createdAt}</p>
+            <p>{description}...amount {amount}... createdAt {createdAt}</p>
             <button onClick={() => removeExpenseFromRedux(id)}>Remove</button>
         </div>
     )

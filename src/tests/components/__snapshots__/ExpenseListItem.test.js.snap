@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render ExpensListItem with expense from fixture 1`] = `
+<div>
+  <p>
+    <Link
+      to="/edit/1"
+    >
+      Number1One
+    </Link>
+    ...amount 
+    100
+    ... createdAt 
+    0
+  </p>
+</div>
+`;

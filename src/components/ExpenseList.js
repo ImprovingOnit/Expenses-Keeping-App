@@ -7,12 +7,19 @@ export const ExpenseList = (props) => {
     return (
         <div>
             ExpenseList
-            {props.expenses.map((expense) => {
-                return <ExpenseListItem 
+            {
+                props.expenses.length === 0 ? (
+                    <p>No expenses</p>
+                ) : (
+                    props.expenses.map((expense) => {
+                        return <ExpenseListItem 
                             {...expense}
                                 key={expense.id}
                                 /> 
-            }) }
+                    })
+                )
+            }
+           
         </div>
     )
 }

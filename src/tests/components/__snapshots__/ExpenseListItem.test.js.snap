@@ -6,9 +6,10 @@ exports[`render ExpensListItem with expense from fixture 1`] = `
     <Link
       to="/edit/1"
     >
-      Number1One
+      <h2>
+        Number1One
+      </h2>
     </Link>
-    <br />
     amount 
     $1.00
     <br />

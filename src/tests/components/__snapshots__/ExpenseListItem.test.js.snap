@@ -8,10 +8,13 @@ exports[`render ExpensListItem with expense from fixture 1`] = `
     >
       Number1One
     </Link>
-    ...amount 
-    100
-    ... createdAt 
-    0
+    <br />
+    amount 
+    $1.00
+    <br />
+    ...
+    <br />
+    January 1st, 70
   </p>
 </div>
 `;

@@ -8,7 +8,7 @@ import { removeExpense } from '../actions/expenses'
 
 
 
-const EditExpensePage = (props) => {
+export const EditExpensePage = (props) => {
     return (
         <div>
             <ExpenseForm 
@@ -17,13 +17,14 @@ const EditExpensePage = (props) => {
                         props.editExpenseOnRedux(props.expense.id, update)
                         props.history.push('/')
                     }} 
-                    />
+            />
             <button 
                 onClick={() => {
                     props.removeExpenseFromRedux(props.expense.id)
                     props.history.push('/')
                 }}>
-                Remove</button>
+                Remove
+            </button>
         </div>
     )
 }

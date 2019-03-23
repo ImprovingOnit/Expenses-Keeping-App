@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 import { addExpense } from './../actions/expenses'
 
-const AddExpensePage = (props) => {
+export const AddExpensePage = (props) => {
     return (
         <div>
             <h1>AddExpense</h1>

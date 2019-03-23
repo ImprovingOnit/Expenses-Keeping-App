@@ -26,7 +26,7 @@ module.exports = (env) => {
                             {
                                 loader: 'css-loader',
                                 options: {
-                                    sourceMap: ture
+                                    sourceMap: true
                                 }
                             },
                             {

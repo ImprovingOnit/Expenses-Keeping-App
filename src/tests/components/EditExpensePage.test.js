@@ -5,15 +5,15 @@ import { EditExpensePage } from './../../components/EditExpensePage'
 import { expenses } from './../fixtures/expenses'
 
 
-let wrapper, editExpenseOnRedux, startRemoveExpenseFromRedux, history
+let wrapper, startEditExpenseOnRedux, startRemoveExpenseFromRedux, history
 
 beforeEach(() => {
-    editExpenseOnRedux = jest.fn()
+    startEditExpenseOnRedux = jest.fn()
     startRemoveExpenseFromRedux = jest.fn()
     history = { push: jest.fn() }
     wrapper = shallow(
         <EditExpensePage
-            editExpenseOnRedux={editExpenseOnRedux}
+            startEditExpenseOnRedux={startEditExpenseOnRedux}
                 startRemoveExpenseFromRedux={startRemoveExpenseFromRedux}
                     history={history}
                         expense={expenses[2]}
@@ -26,7 +26,7 @@ test('render EditExpensePage correctly', () => {
 
 test('handle edit expense onFormSubmit', () => {
     wrapper.find('ExpenseForm').prop('onFormSubmit')(expenses[2])
-    expect(editExpenseOnRedux).toHaveBeenLastCalledWith(expenses[2].id, expenses[2])
+    expect(startEditExpenseOnRedux).toHaveBeenLastCalledWith(expenses[2].id, expenses[2])
     expect(history.push).toHaveBeenLastCalledWith('/')
 })
 

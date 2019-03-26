@@ -19,3 +19,5 @@ test('handle onFormSubmit', () => {
     expect(history.push).toHaveBeenLastCalledWith('/')
     expect(addExpenseToRedux).toHaveBeenLastCalledWith(expenses[1])
 })
+
+

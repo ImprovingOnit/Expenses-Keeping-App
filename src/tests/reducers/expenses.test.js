@@ -1,4 +1,5 @@
 import expensesReducer from './../../reducers/expenses'
+import { expenses } from './../fixtures/expenses'
 
 const expensesReducerDefaultState = [
     {
@@ -48,4 +49,9 @@ test('editExpense_Reducer', () => {
     }
     const state = expensesReducer(expensesReducerDefaultState, { type: 'EDIT_EXPENSE', id, updates })
     expect(state[0].description).toBe(updates.description)
+})
+
+test('set expenses', () => {
+    const state = expensesReducer(expensesReducerDefaultState, { type: 'SET_EXPENSES', expenses: [expensesReducerDefaultState[0]] })
+    expect(state).toEqual([expensesReducerDefaultState[0]])
 })

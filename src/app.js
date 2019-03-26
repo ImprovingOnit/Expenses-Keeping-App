@@ -8,6 +8,7 @@ import 'react-dates/lib/css/_datepicker.css'
 import './firebase/firebase'
 import AppRouter from './routers/AppRouter'
 import storeExport from './store/expensesStore'
+import { startSetExpenses } from './actions/expenses';
 
 
 const store = storeExport()
@@ -22,4 +23,8 @@ const App = () => {
     )
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'))
+ReactDOM.render(<p>Loading....</p>, document.querySelector('#app'))
+
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(<App />, document.querySelector('#app'))
+})

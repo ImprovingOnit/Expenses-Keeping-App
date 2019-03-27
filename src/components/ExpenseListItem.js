@@ -8,18 +8,16 @@ import numeral from 'numeral'
 export const ExpenseListItem = ({ id, description, amount, createdAt }) => {
     return (
         <div>
-            <p>
-                <Link 
-                    to={`/edit/${id}`}
-                >
-                    <h2>{description}</h2>
-                </Link>
-                amount {numeral(amount / 100).format('$0,0.00')}
-                <br/>
-                ... 
-                <br/>
-                {moment(createdAt).format('MMMM Do, YY')}
-            </p>
+            <Link 
+                to={`/edit/${id}`}
+            >
+                <h2>{description}</h2>
+            </Link>
+            amount {numeral(amount / 100).format('$0,0.00')}
+            <br/>
+            ... 
+            <br/>
+            {moment(createdAt).format('MMMM Do, YY')}
         </div>
     )
 }

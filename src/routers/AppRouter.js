@@ -9,20 +9,21 @@ import EditExpensePage from './../components/EditExpensePage'
 import NotFoundPage from './../components/NotFoundPage'
 import LoginPage from './../components/LoginPage'
 import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 
 export const history = createBrowserHistory()
 
 const AppRouter = () => {
     return (
-        <Router history={history}>
+    <Router history={history}>
         <div>
             <Switch>
-                <Route path="/" exact component={LoginPage} />
+                <PublicRoute path="/" exact component={LoginPage} />
                 <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
                 <PrivateRoute path="/create" component={AddExpensePage} />
                 <PrivateRoute path="/edit/:id" component={EditExpensePage} />
-                <Route path="/help" component={HelpPage} />
+                <PrivateRoute path="/help" component={HelpPage} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>

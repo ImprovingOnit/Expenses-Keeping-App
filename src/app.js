@@ -6,10 +6,10 @@ import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 import 'react-dates/lib/css/_datepicker.css'
 import { firebase } from './firebase/firebase'
-import AppRouter from './routers/AppRouter'
+import AppRouter, { history } from './routers/AppRouter'
 import storeExport from './store/expensesStore'
-import { startSetExpenses } from './actions/expenses';
-
+import { startSetExpenses } from './actions/expenses'
+import { login, logout } from './actions/auth'
 
 const store = storeExport()
 
@@ -23,16 +23,31 @@ const App = () => {
     )
 }
 
+let hasRendered = false
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render(<App />, document.querySelector('#app'))
+        hasRendered = true
+    }
+}
+
 ReactDOM.render(<div>Loading....</div>, document.querySelector('#app'))
 
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(<App />, document.querySelector('#app'))
-})
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        console.log('log in')
+        store.dispatch(login(user.uid))
+        console.log('log in', user.uid)
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp()
+            if (history.location.pathname === '/') {
+                history.push('/dashboard')
+            }
+        })
     } else {
+        store.dispatch(logout())
         console.log('log out')
+        renderApp()
+        history.push('/')
     }
 })

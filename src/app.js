@@ -10,6 +10,7 @@ import AppRouter, { history } from './routers/AppRouter'
 import storeExport from './store/expensesStore'
 import { startSetExpenses } from './actions/expenses'
 import { login, logout } from './actions/auth'
+import LoadingPage from './components/LoadingPage'
 
 const store = storeExport()
 
@@ -31,7 +32,7 @@ const renderApp = () => {
     }
 }
 
-ReactDOM.render(<div>Loading....</div>, document.querySelector('#app'))
+ReactDOM.render(<LoadingPage />, document.querySelector('#app'))
 
 
 firebase.auth().onAuthStateChanged((user) => {

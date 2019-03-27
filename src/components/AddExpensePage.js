@@ -6,13 +6,19 @@ import { startAddExpense } from './../actions/expenses'
 export const AddExpensePage = (props) => {
     return (
         <div>
-            <h1>AddExpense</h1>
-            <ExpenseForm 
-                onFormSubmit={(expense) => {
-                    props.addExpenseToRedux(expense)
-                    props.history.push('/')
-                }}
-            />
+            <div className="page-header">
+                <div className="content-container">
+                    <h1 className="page-header__title">AddExpense</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <ExpenseForm 
+                    onFormSubmit={(expense) => {
+                        props.addExpenseToRedux(expense)
+                        props.history.push('/')
+                    }}
+                />
+            </div>
         </div>
     )
 }

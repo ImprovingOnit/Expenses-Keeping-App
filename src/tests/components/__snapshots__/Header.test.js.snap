@@ -8,9 +8,9 @@ exports[`render Header component 1`] = `
   <NavLink
     activeClassName="is-active"
     exact={true}
-    to="/"
+    to="/dashboard"
   >
-    Home Page
+    DashBoard
   </NavLink>
   <NavLink
     activeClassName="is-active"

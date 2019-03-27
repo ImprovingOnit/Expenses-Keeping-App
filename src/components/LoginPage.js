@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { startLogin } from './../actions/auth'
 
 
-const LoginPage = ({ startLogin }) => {
+export const LoginPage = ({ startLogin }) => {
     return (
         <div>
             <button onClick={startLogin}>Login</button>
